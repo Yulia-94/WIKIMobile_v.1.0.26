@@ -5,6 +5,7 @@ import com.telran.model.User;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
 
+import java.nio.charset.Charset;
 import java.util.Set;
 
 public class UserHelper extends HelperBase {
@@ -35,21 +36,32 @@ public class UserHelper extends HelperBase {
         driver.findElement(By.xpath("//*[@resource-id='org.wikipedia:id/login_button']")).click();
     }
 
-    public void clickLogoutButtonHeader() {
+   // public void clickLogoutButtonHeader() {
 
-        driver.findElement(By.xpath("//*[@resource-id='org.wikipedia:id/main_drawer_login_button']")).click();
+    //    driver.findElement(By.xpath("//*[@resource-id='org.wikipedia:id/main_drawer_login_button']")).click();
 
       // driver.switchTo().alert().accept();
 
-        driver.findElement(By.id("android:id/button1")).click();
+     //   driver.findElement(By.id("android:id/button1")).click();
 
 
         //new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@resource-id='android:id/button1']"))).click();
 
 
-    }
+    //}
 
     public boolean isUserLoggedIn() {
         return isElementPresent(By.xpath("//*[@resource-id='org.wikipedia:id/main_drawer_account_name']"));
     }
+
+    public void logout() {
+        driver.findElement(By.xpath("//*[@resource-id='org.wikipedia:id/main_drawer_login_button']")).click();
+        driver.findElement(By.xpath("//*[@resource-id='android:id/button1']")).click();
+    }
+
+    public void clickOnMenuButton() {
+        driver.findElement(By.xpath("//*[@resource-id='org.wikipedia:id/menu_icon']")).click();
+    }
+
+
 }

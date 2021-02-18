@@ -8,9 +8,7 @@ public class LoginTest extends TestBase{
     public void precondition(){
         app.user().skipWizard();
         app.user().goToLoginForm();
-       if(app.user().isUserLoggedIn()){
-            app.user().clickLogoutButtonHeader();
-        }
+
     }
 
 
